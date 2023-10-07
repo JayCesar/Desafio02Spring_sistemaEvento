@@ -1,6 +1,4 @@
-# Desafio02Spring_sistemaEvento
-[🎯DESAFIO ] Modelo de domínio &amp; ORM
-
+## 🚧 Sistema Evento
 
 - Implementação de entidades de domínio
 
