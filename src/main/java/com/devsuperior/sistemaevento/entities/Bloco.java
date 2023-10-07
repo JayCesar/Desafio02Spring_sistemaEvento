@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Bloco {
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant fim;
 	// Vou salvar no padrão UTC
+	
+	@ManyToOne
+	@JoinColumn(name = "atividade_id")
+	private Atividade atividade; // Esse é o nome do atributo que deve ir no @OneToMany
 	
 	public Bloco() {}
 	
@@ -56,9 +62,9 @@ public class Bloco {
 	public void setFim(Instant fim) {
 		this.fim = fim;
 	}
-	
-	
-	
-	
+
+	public Atividade getAtividade() {
+		return atividade;
+	}
 	
 }
